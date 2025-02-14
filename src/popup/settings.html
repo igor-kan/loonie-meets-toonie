@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Buy Canadian - Settings</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Settings</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-6">
+        <!-- User Profile -->
+        <div class="space-y-4">
+            <h2 class="font-bold text-lg">Profile</h2>
+            <div class="space-y-2">
+                <label class="block text-sm font-medium">Email</label>
+                <input type="email" id="userEmail" class="w-full p-2 border rounded-md" readonly>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-sm font-medium">Location</label>
+                <input type="text" id="userLocation" class="w-full p-2 border rounded-md" placeholder="Enter your city">
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="space-y-4">
+            <h2 class="font-bold text-lg">Notifications</h2>
+            <div class="space-y-3">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" id="priceAlerts" class="rounded text-red-600">
+                    <span>Price Drop Alerts</span>
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" id="newStoreAlerts" class="rounded text-red-600">
+                    <span>New Local Store Alerts</span>
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" id="rewardAlerts" class="rounded text-red-600">
+                    <span>Reward Point Updates</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Preferences -->
+        <div class="space-y-4">
+            <h2 class="font-bold text-lg">Shopping Preferences</h2>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Default Search Radius</label>
+                    <select id="searchRadius" class="w-full p-2 border rounded-md">
+                        <option value="1000">1 km</option>
+                        <option value="5000">5 km</option>
+                        <option value="10000">10 km</option>
+                        <option value="25000">25 km</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Preferred Categories</label>
+                    <div class="space-y-2" id="categoryPreferences">
+                        <!-- Categories will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy -->
+        <div class="space-y-4">
+            <h2 class="font-bold text-lg">Privacy</h2>
+            <div class="space-y-3">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" id="shareData" class="rounded text-red-600">
+                    <span>Share shopping insights anonymously</span>
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" id="locationTracking" class="rounded text-red-600">
+                    <span>Enable location tracking</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="space-y-4">
+            <button id="saveSettings" class="w-full py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                Save Settings
+            </button>
+            <button id="clearData" class="w-full py-2 bg-gray-100 rounded-lg hover:bg-gray-200">
+                Clear All Data
+            </button>
+            <button id="logout" class="w-full py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-50">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html> 

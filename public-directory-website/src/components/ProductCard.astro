@@ -1,0 +1,12 @@
+---
+// public-directory-website/src/components/ProductCard.astro
+const { product } = Astro.props;
+---
+<div class="border rounded shadow p-4 m-2">
+  <h2 class="font-bold text-lg">{product.name}</h2>
+  <p>Canadian Score: {product.canadianScore}</p>
+  <a href={product.url} target="_blank" class="text-blue-500 underline">View Product</a>
+  <div class="mt-2">
+    <a href={`/product/${product.asin}`} class="text-sm text-gray-700">Details</a>
+  </div>
+</div>

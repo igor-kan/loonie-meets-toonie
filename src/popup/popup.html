@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../styles/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Loonie Meets Toonie</title>
+    <style>
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .maple-leaf {
+            animation: rotate 10s linear infinite;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            right: 16px;
+            top: 16px;
+        }
+    </style>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4 relative">
+        <img src="../assets/icons/logo_art_and_app_name_large.jpg" alt="Loonie Meets Toonie" class="h-8">
+        <img src="../assets/icons/maple-leaf.png" alt="Maple Leaf" class="maple-leaf">
+    </nav>
+
+    <div class="p-4 space-y-6">
+        <!-- Search Section -->
+        <div class="space-y-2">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search Canadian products..."
+                class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-red-500"
+            >
+            <select id="categoryFilter" class="w-full p-3 border rounded-lg">
+                <option value="">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing & Apparel</option>
+                <option value="food">Food & Beverages</option>
+                <option value="home">Home & Garden</option>
+            </select>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-2 gap-4">
+            <button id="nearbyBtn" class="p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+                <span class="block font-semibold">Nearby Stores</span>
+                <span class="text-sm text-gray-600">Find local shops</span>
+            </button>
+            <button id="rewardsBtn" class="p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
+                <span class="block font-semibold">Rewards</span>
+                <span class="text-sm text-gray-600">View & redeem</span>
+            </button>
+        </div>
+
+        <!-- Results Area -->
+        <div id="resultsArea" class="space-y-4">
+            <!-- Results will be populated here -->
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="rewardsModal" class="hidden fixed inset-0 bg-black bg-opacity-50">
+        <!-- Rewards content -->
+    </div>
+
+    <!-- Add Price History Modal -->
+    <div id="priceHistoryModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-4 rounded-lg w-[380px]">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold">Price History</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">✕</button>
+            </div>
+            <canvas id="priceChart"></canvas>
+            <div class="mt-4">
+                <button id="trackPriceBtn" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
+                    Track Price
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Alert Settings Modal -->
+    <div id="alertSettingsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-4 rounded-lg w-[380px]">
+            <h3 class="font-bold mb-4">Set Price Alert</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Target Price</label>
+                    <input type="number" id="targetPrice" class="mt-1 w-full p-2 border rounded-md">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Notification Method</label>
+                    <select id="notificationMethod" class="mt-1 w-full p-2 border rounded-md">
+                        <option value="extension">Extension</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <button id="saveAlertBtn" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
+                    Save Alert
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

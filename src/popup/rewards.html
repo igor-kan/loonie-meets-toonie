@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Buy Canadian - Rewards</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Rewards</h1>
+            <div id="pointsDisplay" class="text-sm">🍁 0 points</div>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-6">
+        <!-- Points Summary -->
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-red-600" id="totalPoints">0</div>
+                <div class="text-sm text-gray-600">Total Points</div>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-4 text-center">
+                <div>
+                    <div class="font-bold" id="monthlyPoints">0</div>
+                    <div class="text-sm text-gray-600">This Month</div>
+                </div>
+                <div>
+                    <div class="font-bold" id="savingsAmount">$0</div>
+                    <div class="text-sm text-gray-600">Total Savings</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Rewards -->
+        <div>
+            <h2 class="font-bold mb-3">Available Rewards</h2>
+            <div id="rewardsList" class="space-y-3">
+                <!-- Rewards will be populated here -->
+            </div>
+        </div>
+
+        <!-- History -->
+        <div>
+            <h2 class="font-bold mb-3">Recent Activity</h2>
+            <div id="activityList" class="space-y-2">
+                <!-- Activity history will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="rewards.js"></script>
+</body>
+</html> 

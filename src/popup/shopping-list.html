@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Buy Canadian - Shopping Lists</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Shopping Lists</h1>
+            <button id="newListBtn" class="text-white">+ New</button>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-4">
+        <!-- Lists Overview -->
+        <div id="listsContainer" class="space-y-4">
+            <!-- Lists will be populated here -->
+        </div>
+
+        <!-- New List Modal -->
+        <div id="newListModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white p-6 rounded-lg w-80 space-y-4">
+                <h2 class="text-lg font-bold">Create New List</h2>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium">List Name</label>
+                    <input type="text" id="listName" 
+                           class="w-full p-2 border rounded-lg">
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium">Budget (optional)</label>
+                    <input type="number" id="listBudget" 
+                           class="w-full p-2 border rounded-lg"
+                           placeholder="0.00">
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button id="cancelNewList" 
+                            class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                        Cancel
+                    </button>
+                    <button id="createList" 
+                            class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shopping-list.js"></script>
+</body>
+</html> 

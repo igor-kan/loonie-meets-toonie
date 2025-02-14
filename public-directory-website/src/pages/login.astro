@@ -1,0 +1,29 @@
+---
+// public-directory-website/src/pages/login.astro
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - Buy Canadian</title>
+    <script type="module">
+      import { createClient } from '@supabase/supabase-js';
+      const supabaseUrl = 'https://YOUR_SUPABASE_URL';
+      const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+      const supabase = createClient(supabaseUrl, supabaseKey);
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        const loginButton = document.getElementById('login-button');
+        loginButton.addEventListener('click', async () => {
+          const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
+          if (error) {
+            console.error('Error logging in:', error);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <button id="login-button">Login with Google</button>
+  </body>
+</html>

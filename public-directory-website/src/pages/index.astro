@@ -1,0 +1,18 @@
+---
+// public-directory-website/src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+// Fetch products from backend API
+const products = await fetch('https://api.yourdomain.com/api/products')
+  .then((res) => res.json())
+  .catch(() => []);
+---
+<BaseLayout>
+  <h1 class="text-3xl font-bold mb-4">Canadian-Made Products</h1>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {products.map(product => (
+      <ProductCard product={product} key={product.asin} />
+    ))}
+  </div>
+</BaseLayout>

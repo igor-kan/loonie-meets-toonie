@@ -1,0 +1,26 @@
+---
+// public-directory-website/src/components/VoteWidget.astro
+const { productId } = Astro.props;
+---
+<div class="vote-widget">
+  <button class="bg-green-500 text-white px-2 py-1 rounded" on:click={() => vote(1)}>👍</button>
+  <button class="bg-red-500 text-white px-2 py-1 rounded" on:click={() => vote(-1)}>👎</button>
+  <script type="module">
+    async function vote(voteValue) {
+      const res = await fetch('https://api.yourdomain.com/api/votes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // Include auth header if needed
+        },
+        body: JSON.stringify({
+          productId: Number({productId}),
+          userId: "example-user", // Replace with actual user id from social auth
+          vote: voteValue
+        })
+      });
+      const data = await res.json();
+      console.log('Vote registered:', data);
+    }
+  </script>
+</div>

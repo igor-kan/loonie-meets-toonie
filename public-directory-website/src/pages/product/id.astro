@@ -1,0 +1,22 @@
+---
+// public-directory-website/src/pages/product/[id].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VoteWidget from '../../components/VoteWidget.astro';
+
+const { id } = Astro.params;
+const product = await fetch(`https://api.yourdomain.com/api/products/${id}`)
+  .then((res) => res.json())
+  .catch(() => null);
+---
+<BaseLayout>
+  {product ? (
+    <>
+      <h1 class="text-3xl font-bold">{product.name}</h1>
+      <p>Canadian Score: {product.canadianScore}</p>
+      <p>Raw Data: {product.rawData}</p>
+      <VoteWidget productId={product.id} />
+    </>
+  ) : (
+    <p>Product not found.</p>
+  )}
+</BaseLayout>

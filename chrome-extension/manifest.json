@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Buy Canadian Extension",
+    "version": "1.0.0",
+    "description": "Scrapes Amazon listings to show Canadian-made product indicators and allow community voting.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "src/background.ts"
+    },
+    "action": {
+      "default_popup": "src/popup/index.html",
+      "default_icon": {
+        "16": "public/icons/icon16.png",
+        "48": "public/icons/icon48.png",
+        "128": "public/icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.amazon.com/*", "*://*.amazon.ca/*"],
+        "js": ["src/contentScript.tsx"]
+      }
+    ]
+  }
+  

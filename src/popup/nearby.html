@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY&libraries=places"></script>
+    <title>Buy Canadian - Nearby Businesses</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Nearby Canadian Businesses</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-4">
+        <!-- Map View -->
+        <div id="map" class="h-[200px] rounded-lg border"></div>
+
+        <!-- Filters -->
+        <div class="flex gap-2">
+            <select id="categoryFilter" class="flex-1 p-2 border rounded-md">
+                <option value="">All Categories</option>
+                <option value="retail">Retail</option>
+                <option value="restaurant">Restaurants</option>
+                <option value="service">Services</option>
+            </select>
+            <select id="radiusFilter" class="w-32 p-2 border rounded-md">
+                <option value="1000">1 km</option>
+                <option value="2000">2 km</option>
+                <option value="5000">5 km</option>
+            </select>
+        </div>
+
+        <!-- Business List -->
+        <div id="businessList" class="space-y-3 max-h-[300px] overflow-y-auto">
+            <!-- Businesses will be populated here -->
+        </div>
+    </div>
+
+    <script src="nearby.js"></script>
+</body>
+</html> 

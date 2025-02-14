@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Loonie Meets Toonie",
+  "version": "1.0.0",
+  "description": "Your Canadian shopping companion",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://*.amazon.ca/*",
+    "*://*.walmart.ca/*",
+    "*://*.bestbuy.ca/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/logo-no-name.png",
+      "48": "assets/icons/logo-no-name.png",
+      "128": "assets/icons/logo-no-name.png"
+    }
+  },
+  
+  "icons": {
+    "16": "assets/icons/logo-no-name.png",
+    "48": "assets/icons/logo-no-name.png",
+    "128": "assets/icons/logo-no-name.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.ca/*",
+        "*://*.walmart.ca/*",
+        "*://*.bestbuy.ca/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

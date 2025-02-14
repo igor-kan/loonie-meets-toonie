@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Buy Canadian - Recommendations</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Recommended for You</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-4">
+        <!-- Filters -->
+        <div class="flex gap-2">
+            <select id="categoryFilter" class="flex-1 p-2 border rounded-md">
+                <option value="all">All Categories</option>
+                <option value="food">Food & Beverages</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Garden</option>
+                <option value="electronics">Electronics</option>
+            </select>
+            <select id="sortBy" class="w-32 p-2 border rounded-md">
+                <option value="relevance">Relevance</option>
+                <option value="price-low">Price: Low</option>
+                <option value="price-high">Price: High</option>
+                <option value="rating">Rating</option>
+            </select>
+        </div>
+
+        <!-- Recommendations List -->
+        <div id="recommendationsList" class="space-y-4">
+            <!-- Products will be populated here -->
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="hidden">
+            <div class="animate-pulse space-y-4">
+                <div class="h-24 bg-gray-200 rounded-lg"></div>
+                <div class="h-24 bg-gray-200 rounded-lg"></div>
+                <div class="h-24 bg-gray-200 rounded-lg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="recommendations.js"></script>
+</body>
+</html> 

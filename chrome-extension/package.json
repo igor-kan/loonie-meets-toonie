@@ -1,0 +1,27 @@
+{
+    "name": "buy-canadian-extension",
+    "version": "1.0.0",
+    "description": "Chrome extension built with React, Tailwind, ShadCN UI, and TypeScript.",
+    "scripts": {
+        "dev": "concurrently \"npm run watch:css\" \"vite\"",
+        "build": "npm run build:css && vite build",
+        "preview": "vite preview",
+        "build:css": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css",
+        "watch:css": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "shadcn-ui": "latest"
+    },
+    "devDependencies": {
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
+        "@vitejs/plugin-react": "^3.0.0",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.5.2",
+        "tailwindcss": "^4.0.6",
+        "typescript": "^4.9.5",
+        "vite": "^4.0.0"
+    }
+}

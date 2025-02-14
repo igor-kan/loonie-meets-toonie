@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Buy Canadian - Analytics</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Shopping Analytics</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-6">
+        <!-- Time Range Selector -->
+        <div class="flex gap-2">
+            <select id="timeRange" class="flex-1 p-2 border rounded-md">
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+                <option value="90">Last 90 Days</option>
+                <option value="365">Last Year</option>
+            </select>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="text-sm text-gray-600">Total Spent</div>
+                <div class="text-xl font-bold" id="totalSpent">$0</div>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <div class="text-sm text-gray-600">Canadian Products</div>
+                <div class="text-xl font-bold" id="canadianRatio">0%</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="space-y-6">
+            <div>
+                <h3 class="font-bold mb-2">Spending Trends</h3>
+                <canvas id="spendingChart"></canvas>
+            </div>
+            <div>
+                <h3 class="font-bold mb-2">Top Categories</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Insights -->
+        <div class="space-y-2">
+            <h3 class="font-bold">Shopping Insights</h3>
+            <div id="insights" class="space-y-2">
+                <!-- Insights will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="analytics.js"></script>
+</body>
+</html> 

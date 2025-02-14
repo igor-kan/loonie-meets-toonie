@@ -1,0 +1,8 @@
+/* chrome-extension/src/popup/popup.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add your custom styles below this line */
+
+/* You can add additional custom styles here if needed */

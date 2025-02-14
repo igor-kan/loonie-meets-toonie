@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <title>Buy Canadian - Share</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Share Product</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-6">
+        <!-- Product Preview -->
+        <div id="productPreview" class="border rounded-lg p-4">
+            <!-- Product details will be populated here -->
+        </div>
+
+        <!-- Share Options -->
+        <div class="space-y-4">
+            <h2 class="font-bold">Share on</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <button id="shareTwitter" class="flex items-center justify-center gap-2 p-3 border rounded-lg hover:bg-gray-50">
+                    <img src="../assets/twitter.svg" alt="Twitter" class="w-5 h-5">
+                    <span>Twitter</span>
+                </button>
+                <button id="shareFacebook" class="flex items-center justify-center gap-2 p-3 border rounded-lg hover:bg-gray-50">
+                    <img src="../assets/facebook.svg" alt="Facebook" class="w-5 h-5">
+                    <span>Facebook</span>
+                </button>
+                <button id="shareLinkedIn" class="flex items-center justify-center gap-2 p-3 border rounded-lg hover:bg-gray-50">
+                    <img src="../assets/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                    <span>LinkedIn</span>
+                </button>
+                <button id="shareEmail" class="flex items-center justify-center gap-2 p-3 border rounded-lg hover:bg-gray-50">
+                    <img src="../assets/email.svg" alt="Email" class="w-5 h-5">
+                    <span>Email</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Custom Message -->
+        <div class="space-y-2">
+            <h2 class="font-bold">Add a message</h2>
+            <textarea id="shareMessage" 
+                      class="w-full p-3 border rounded-lg resize-none"
+                      rows="3"
+                      placeholder="Tell others why you love this product..."></textarea>
+        </div>
+
+        <!-- Share Stats -->
+        <div class="bg-gray-50 p-4 rounded-lg">
+            <div class="text-sm text-gray-600">
+                This product has been shared
+                <span id="shareCount" class="font-bold">0</span> times
+            </div>
+        </div>
+    </div>
+
+    <script src="share.js"></script>
+</body>
+</html> 

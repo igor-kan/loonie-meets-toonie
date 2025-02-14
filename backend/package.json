@@ -1,0 +1,29 @@
+{
+    "name": "buy-canadian-backend",
+    "version": "1.0.0",
+    "description": "Backend for Loonie Meets Toonie - Canadian product analyzer",
+    "main": "src/index.ts",
+    "scripts": {
+      "start": "ts-node src/server.ts",
+      "dev": "nodemon src/server.ts",
+      "test": "jest",
+      "build": "tsc"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "drizzle-orm": "^0.29.3",
+      "postgres": "^3.4.3",
+      "zod": "^3.22.4",
+      "langchain": "^0.1.9",
+      "@langchain/openai": "^0.0.14",
+      "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.21",
+      "@types/node": "^20.11.0",
+      "typescript": "^5.3.3",
+      "ts-node": "^10.9.2",
+      "nodemon": "^3.0.2"
+    }
+  }
+  

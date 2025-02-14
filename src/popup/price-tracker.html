@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Buy Canadian - Price Tracker</title>
+</head>
+<body class="w-[400px] min-h-[600px] bg-white">
+    <nav class="bg-red-600 text-white p-4">
+        <div class="flex items-center justify-between">
+            <button id="backBtn" class="text-white">← Back</button>
+            <h1 class="text-xl font-bold">Price Tracker</h1>
+        </div>
+    </nav>
+
+    <div class="p-4 space-y-4">
+        <!-- Tracked Products -->
+        <div id="trackedProducts" class="space-y-3">
+            <!-- Products will be populated here -->
+        </div>
+
+        <!-- Price Alert Modal -->
+        <div id="alertModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white p-4 rounded-lg w-[90%] max-w-md">
+                <h3 class="text-lg font-bold mb-4">Set Price Alert</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Target Price</label>
+                        <input type="number" id="targetPrice" class="w-full p-2 border rounded-md" step="0.01">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Notification Method</label>
+                        <select id="notificationMethod" class="w-full p-2 border rounded-md">
+                            <option value="extension">Browser Notification</option>
+                            <option value="email">Email</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="cancelAlert" class="flex-1 py-2 bg-gray-100 rounded-lg hover:bg-gray-200">
+                            Cancel
+                        </button>
+                        <button id="saveAlert" class="flex-1 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+                            Save Alert
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="price-tracker.js"></script>
+</body>
+</html> 
